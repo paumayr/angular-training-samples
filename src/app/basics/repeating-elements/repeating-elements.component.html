@@ -1,0 +1,18 @@
+<div>
+  <h1>Fruits</h1>
+
+  <ul>
+      <li *ngFor="let fruit of fruits">{{fruit}}</li>
+  </ul>
+
+<!-- Below shows the transformation on * directives performed by angular -->
+<!--    <ul>
+      <li *ngFor="let fruit of fruits">{{fruit}}</li>
+
+      <template ngFor let-fruit [ngForOf]="fruits">
+          <li>{{fruit}}</li>
+      </template>
+  </ul>
+  --> 
+</div>
+

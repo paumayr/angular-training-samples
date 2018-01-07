@@ -1,0 +1,20 @@
+<div>
+  <h1>Text Input</h1>
+
+  <label for="inputFieldChange">Input field (change):</label>
+  <input id="inputFieldChange" type="text" [value]="message" 
+      (change)="message = $event.target.value" />
+
+  <div>The message input is: '{{message}}'</div>
+
+  <br/>
+
+  <div>Using (input) event binding</div>
+
+  <label for="inputFieldInput">Input field (input):</label>
+  <input id="inputFieldInput" type="text" [value]="blogtext" 
+      (input)="blogtext = $event.target.value" />
+ 
+  <div>The blog input is: '{{blogtext}}'</div>
+
+</div>

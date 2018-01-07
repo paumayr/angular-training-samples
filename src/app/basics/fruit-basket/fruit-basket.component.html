@@ -1,0 +1,11 @@
+<div>
+  <h1>Fruit Basket</h1>
+
+  <ul>
+      <li *ngFor="let fruit of fruits; let index = index"><button (click)="remove(index)">x</button> {{fruit}}</li>
+  </ul>
+
+  <label>New Name</label>
+  <input id="" type="text" [(ngModel)]="fruitName" />
+  <button (click)="add()">Add</button>
+</div>
