@@ -1,0 +1,15 @@
+a {
+    background: white;
+    color: gray;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+a.active-link {
+    background: gray;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+}

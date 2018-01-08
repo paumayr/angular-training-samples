@@ -1,0 +1,13 @@
+<div>
+  <h1>Switching</h1>
+
+  <button (click)="nextPage()">Next</button>
+  <button (click)="prevPage()">Prev</button>
+
+  <div [ngSwitch]="currentPage">
+      <div *ngSwitchCase="'intro'">This is the introduction...</div>
+      <div *ngSwitchCase="'chapter1'">This is the first chapter...</div>
+      <div *ngSwitchCase="'chapter2'">This is the second chapter...</div>
+      <div *ngSwitchCase="'closing'">Famous last words...</div>
+  </div>
+</div>

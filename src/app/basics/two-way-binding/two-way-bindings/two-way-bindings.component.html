@@ -1,0 +1,11 @@
+<div>
+  <h1>Two Way Bindings</h1>
+
+  <app-my-custom [(amount)]="myamount"></app-my-custom>
+  <!-- equal to -->
+  <app-my-custom [amount]="myamount"
+             (amountChange)="myamount = $event"></app-my-custom>
+
+
+  <div>myamount = {{myamount}}</div>
+</div>

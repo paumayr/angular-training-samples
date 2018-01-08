@@ -1,0 +1,17 @@
+div.rect {
+    width: 100px;
+    height: 100px;
+}
+.even {
+    background-color: yellow;
+    color: green;
+}
+
+.odd {
+    background-color: blue;
+    color: white;
+}
+
+.vert-tab {
+    height: 40px;
+}

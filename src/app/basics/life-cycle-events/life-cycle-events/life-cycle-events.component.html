@@ -1,0 +1,9 @@
+<div>
+  <button (click)="show = !show">Toggle</button>
+
+  <input type="text" [value]="name" (input)="name = $event.target.value">
+
+  <div *ngIf="show">
+      <app-noisy-comp [firstName]="name"></app-noisy-comp>
+  </div>
+</div>

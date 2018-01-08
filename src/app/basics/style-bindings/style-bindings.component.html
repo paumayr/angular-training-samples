@@ -1,0 +1,27 @@
+<div>
+
+  <h1>Basic Binding</h1>
+
+  <button (click)="increaseFont()">+</button>
+  <button (click)="decreaseFont()">-</button>
+
+  <div [style.fontSize.px]="fontSize">Homer Simpson</div>
+  <div [style.font-size.px]="fontSize">March Simpson</div>
+
+
+  <h1>Binding with Units</h1>
+
+  <button (click)="increaseWidth()">+ w</button>
+  <button (click)="decreaseWidth()">- w</button>
+
+  <button (click)="increaseHeight()">+ h</button>
+  <button (click)="decreaseHeight()">- h</button>
+
+  <div [style.width.px]="width" 
+       [style.height.px]="height"
+       style="background: green;">
+      I resize!
+  </div>
+
+
+</div>
