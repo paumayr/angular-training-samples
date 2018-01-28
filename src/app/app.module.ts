@@ -4,12 +4,19 @@ import { AppComponent } from './app.component';
 import { Route } from '@angular/router';
 import { OverviewComponent } from './overview/overview.component';
 import { RouterModule } from '@angular/router';
-import { BasicsModule } from './basics/basics.module';
 
 const routes : Route[] = [
   {
     path: 'overview',
     component: OverviewComponent
+  },
+  {
+    path: 'basics',
+    loadChildren: './basics/basics.module#BasicsModule'
+  },
+  {
+    path: 'advanced',
+    loadChildren: './advanced/advanced.module#AdvancedModule'
   },
   {
     path: '',
@@ -25,7 +32,6 @@ const routes : Route[] = [
   ],
   imports: [
     BrowserModule,
-    BasicsModule,
     RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [],

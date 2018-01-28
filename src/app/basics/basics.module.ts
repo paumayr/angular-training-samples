@@ -27,27 +27,22 @@ import { RouterLinkActiveModule } from './router-link-active/router-link-active.
 import { RouteParametersModule } from './route-parameters/route-parameters.module';
 
 const basicRoutes : Route[] = [
-  {
-    path: 'basics',
-    children: [
-      { path: 'displayingdata', component: DisplayingDataComponent },
-      { path: 'buttonclick', component: ButtonClickComponent },
-      { path: 'showif', component: ShowIfComponent },
-      { path: 'repeatingelements', component: RepeatingElementsComponent },
-      { path: 'textinput', component: TextInputComponent },
-      { path: 'modelbinding', component: ModelBindingComponent },
-      { path: 'fruitbasket', component: FruitBasketComponent },
+    { path: 'displayingdata', component: DisplayingDataComponent },
+    { path: 'buttonclick', component: ButtonClickComponent },
+    { path: 'showif', component: ShowIfComponent },
+    { path: 'repeatingelements', component: RepeatingElementsComponent },
+    { path: 'textinput', component: TextInputComponent },
+    { path: 'modelbinding', component: ModelBindingComponent },
+    { path: 'fruitbasket', component: FruitBasketComponent },
 
-      { path: 'inputbindings', component: InputBindingsComponent },
-      { path: 'outputbindings', component: OutputBindingsComponent },
-      { path: 'twowaybindings', component: TwoWayBindingsComponent },
-      { path: 'lifecycleevents', component: LifeCycleEventsComponent },
-      { path: 'stylebindings', component: StyleBindingsComponent },
-      { path: 'classbinding', component: ClassBindingComponent },
-      { path: 'switching', component: SwitchingComponent },
-      { path: 'pipes', component: PipesComponent }
-    ]
-  }
+    { path: 'inputbindings', component: InputBindingsComponent },
+    { path: 'outputbindings', component: OutputBindingsComponent },
+    { path: 'twowaybindings', component: TwoWayBindingsComponent },
+    { path: 'lifecycleevents', component: LifeCycleEventsComponent },
+    { path: 'stylebindings', component: StyleBindingsComponent },
+    { path: 'classbinding', component: ClassBindingComponent },
+    { path: 'switching', component: SwitchingComponent },
+    { path: 'pipes', component: PipesComponent }
 ];
 
 @NgModule({
