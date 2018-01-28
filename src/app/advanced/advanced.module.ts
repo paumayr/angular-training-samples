@@ -13,6 +13,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DataFromObservableComponent } from './data-from-observable/data-from-observable.component';
 import { RxjsPrimerComponent } from './rxjs-primer/rxjs-primer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RxjsServiceUnsubscribeComponent } from './rxjs-service-unsubscribe/rxjs-service-unsubscribe.component';
+import { RxjsServiceUnsubscribeModule } from './rxjs-service-unsubscribe/rxjs-service-unsubscribe.module';
 
 const routes : Route[] = [
     { path: 'zones-trigger-changedetection', component: ZonesTriggerChangedetectionComponent },
@@ -21,7 +23,8 @@ const routes : Route[] = [
     { path: 'template-driven-form', component: TemplateDrivenFormComponent },
     { path: 'reactive-form', component: ReactiveFormComponent },
     { path: 'data-from-observable', component: DataFromObservableComponent},
-    { path: 'rxjs-primer', component: RxjsPrimerComponent }
+    { path: 'rxjs-primer', component: RxjsPrimerComponent },
+    { path: 'rxjs-service-unsubscribe', component: RxjsServiceUnsubscribeComponent }
 ];
 
 @NgModule({
@@ -32,6 +35,7 @@ const routes : Route[] = [
     DefaultChangedetectionModule,
     OnpushModule,
     HttpClientModule,
+    RxjsServiceUnsubscribeModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
