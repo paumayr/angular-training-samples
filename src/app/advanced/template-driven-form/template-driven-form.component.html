@@ -1,0 +1,41 @@
+<form #form="ngForm" (ngSubmit)="saveForm(form.value)">
+  <div>
+    Firstname: <input name="firstname" ngModel required #firstnameModel="ngModel" />
+  </div>
+
+  <div>
+    Lastname: <input name="lastname" ngModel required #lastnameModel="ngModel" />
+  </div>
+
+  <div>
+    Email: <input name="email" ngModel required pattern="[a-zA-Z0-9]+@mycompany\.com" [ngModel]="'@mycompany.com'"
+                                #emailModel="ngModel"/>
+  </div>
+
+  <div [style.color]="'red'">
+    <div *ngIf="firstnameModel.errors && firstnameModel.errors.required"> 
+      You have to provide your firstname.
+    </div>
+
+    <div *ngIf="lastnameModel.errors && lastnameModel.errors.required">
+        You have to provide your lastname. 
+    </div>
+    
+    <div *ngIf="emailModel.errors">
+      <div *ngIf="emailModel.errors.required">You have to provide your email.</div>
+      <div *ngIf="emailModel.errors.pattern">Your email must be of the form username@mycompany.com</div>
+    </div>
+  </div>
+
+  <div [style.color]="'green'" *ngIf="form.valid">
+      All inputs valid! Good Job!
+  </div>
+
+  <button [disabled]="form.invalid" type="submit">Submit</button>
+
+  <!-- alternatively directly access... requires null-coalesce, due to later construction -->
+  <div *ngIf="form.controls?.firstname?.errors?.required">
+      You have to provide your lastname. 
+  </div>
+</form>
+

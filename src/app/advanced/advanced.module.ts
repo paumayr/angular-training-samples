@@ -7,22 +7,27 @@ import { DefaultChangedetectionModule } from './default-changedetection/default-
 import { DefaultChangedetectionComponent } from './default-changedetection/default-changedetection.component';
 import { OnpushComponent } from './onpush/onpush.component';
 import { OnpushModule } from './onpush/onpush.module';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes : Route[] = [
     { path: 'zones-trigger-changedetection', component: ZonesTriggerChangedetectionComponent },
     { path: 'default-changedetection', component: DefaultChangedetectionComponent },
-    { path: 'onpush', component: OnpushComponent}
+    { path: 'onpush', component: OnpushComponent},
+    { path: 'template-driven-form', component: TemplateDrivenFormComponent }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     DefaultChangedetectionModule,
     OnpushModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
-    ZonesTriggerChangedetectionComponent
+    ZonesTriggerChangedetectionComponent,
+    TemplateDrivenFormComponent
   ]
 })
 export class AdvancedModule { }
