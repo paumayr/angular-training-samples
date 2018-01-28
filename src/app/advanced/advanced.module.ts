@@ -10,13 +10,18 @@ import { OnpushModule } from './onpush/onpush.module';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { DataFromObservableComponent } from './data-from-observable/data-from-observable.component';
+import { RxjsPrimerComponent } from './rxjs-primer/rxjs-primer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes : Route[] = [
     { path: 'zones-trigger-changedetection', component: ZonesTriggerChangedetectionComponent },
     { path: 'default-changedetection', component: DefaultChangedetectionComponent },
     { path: 'onpush', component: OnpushComponent},
     { path: 'template-driven-form', component: TemplateDrivenFormComponent },
-    { path: 'reactive-form', component: ReactiveFormComponent }
+    { path: 'reactive-form', component: ReactiveFormComponent },
+    { path: 'data-from-observable', component: DataFromObservableComponent},
+    { path: 'rxjs-primer', component: RxjsPrimerComponent }
 ];
 
 @NgModule({
@@ -26,12 +31,15 @@ const routes : Route[] = [
     ReactiveFormsModule,
     DefaultChangedetectionModule,
     OnpushModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     ZonesTriggerChangedetectionComponent,
     TemplateDrivenFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    DataFromObservableComponent,
+    RxjsPrimerComponent
   ]
 })
 export class AdvancedModule { }
