@@ -1,0 +1,36 @@
+<H1>Reactive Form</H1>
+
+<div [formGroup]="formGroup">
+  <div>
+  Firstname: <input formControlName="firstname" />
+  </div>
+  <div>
+  Lastname: <input formControlName="lastname" />
+  </div>
+
+  <div>
+  Email: <input formControlName="email" />
+  </div>
+</div>
+
+
+<div [style.color]="'red'">
+    <div *ngIf="firstname.errors?.required"> 
+      You have to provide your firstname.
+    </div>
+
+    <div *ngIf="lastname.errors?.required">
+        You have to provide your lastname. 
+    </div>
+    
+    <div *ngIf="email.errors">
+      <div *ngIf="email.errors.required">You have to provide your email.</div>
+      <div *ngIf="email.errors.pattern">Your email must be of the form username@mycompany.com</div>
+    </div>
+  </div>
+
+  <div [style.color]="'green'" *ngIf="formGroup.valid">
+      All inputs valid! Good Job!
+  </div>
+
+  <button [disabled]="formGroup.invalid" (click)="saveForm(formGroup.value)">Submit</button>
