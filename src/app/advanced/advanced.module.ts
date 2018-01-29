@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RxjsServiceUnsubscribeComponent } from './rxjs-service-unsubscribe/rxjs-service-unsubscribe.component';
 import { RxjsServiceUnsubscribeModule } from './rxjs-service-unsubscribe/rxjs-service-unsubscribe.module';
 import { HotVsColdObservableComponent } from './hot-vs-cold-observable/hot-vs-cold-observable.component';
+import { PromisesComponent } from './promises/promises.component';
 
 const routes : Route[] = [
     { path: 'zones-trigger-changedetection', component: ZonesTriggerChangedetectionComponent },
@@ -26,7 +27,8 @@ const routes : Route[] = [
     { path: 'data-from-observable', component: DataFromObservableComponent},
     { path: 'rxjs-primer', component: RxjsPrimerComponent },
     { path: 'rxjs-service-unsubscribe', component: RxjsServiceUnsubscribeComponent },
-    { path: 'hot-vs-cold-observable', component: HotVsColdObservableComponent }
+    { path: 'hot-vs-cold-observable', component: HotVsColdObservableComponent },
+    { path: 'promises', component: PromisesComponent }
 ];
 
 @NgModule({
@@ -46,7 +48,8 @@ const routes : Route[] = [
     ReactiveFormComponent,
     DataFromObservableComponent,
     RxjsPrimerComponent,
-    HotVsColdObservableComponent
+    HotVsColdObservableComponent,
+    PromisesComponent
   ]
 })
 export class AdvancedModule { }

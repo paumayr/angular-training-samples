@@ -14,19 +14,8 @@ import 'rxjs/add/observable/forkJoin';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/toArray';
-
-interface Customer {
-  id : number;
-  name: string;
-}
-
-interface Order {
-  id: number;
-  customerId: number;
-  customer?: Customer;
-  amount: number;
-  items: string[];
-};
+import { Customer } from '../customer';
+import { Order } from '../order';
 
 @Component({
   selector: 'app-rxjs-primer',
