@@ -1,0 +1,7 @@
+:host() {
+    background: lime;
+}
+
+:host-context(.large-font) div {
+    font-size: 1.5em;
+}

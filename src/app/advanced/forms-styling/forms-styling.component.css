@@ -1,0 +1,4 @@
+
+input[required].ng-invalid {
+    border: solid 2px red;
+}

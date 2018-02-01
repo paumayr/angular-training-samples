@@ -18,6 +18,9 @@ import { RxjsServiceUnsubscribeModule } from './rxjs-service-unsubscribe/rxjs-se
 import { HotVsColdObservableComponent } from './hot-vs-cold-observable/hot-vs-cold-observable.component';
 import { PromisesComponent } from './promises/promises.component';
 import { AsyncAwaitComponent } from './async-await/async-await.component';
+import { FormsStylingComponent } from './forms-styling/forms-styling.component';
+import { ViewEncapsulationComponent } from './view-encapsulation/view-encapsulation.component';
+import { ViewEncapsulationModule } from './view-encapsulation/view-encapsulation.module';
 
 const routes : Route[] = [
     { path: 'zones-trigger-changedetection', component: ZonesTriggerChangedetectionComponent },
@@ -25,12 +28,14 @@ const routes : Route[] = [
     { path: 'onpush', component: OnpushComponent},
     { path: 'template-driven-form', component: TemplateDrivenFormComponent },
     { path: 'reactive-form', component: ReactiveFormComponent },
+    { path: 'forms-styling', component: FormsStylingComponent },
     { path: 'data-from-observable', component: DataFromObservableComponent},
     { path: 'rxjs-primer', component: RxjsPrimerComponent },
     { path: 'rxjs-service-unsubscribe', component: RxjsServiceUnsubscribeComponent },
     { path: 'hot-vs-cold-observable', component: HotVsColdObservableComponent },
     { path: 'promises', component: PromisesComponent },
-    { path: 'async-await', component: AsyncAwaitComponent }
+    { path: 'async-await', component: AsyncAwaitComponent },
+    { path: 'view-encapsulation', component: ViewEncapsulationComponent }
 ];
 
 @NgModule({
@@ -42,6 +47,7 @@ const routes : Route[] = [
     OnpushModule,
     HttpClientModule,
     RxjsServiceUnsubscribeModule,
+    ViewEncapsulationModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
@@ -52,7 +58,8 @@ const routes : Route[] = [
     RxjsPrimerComponent,
     HotVsColdObservableComponent,
     PromisesComponent,
-    AsyncAwaitComponent
+    AsyncAwaitComponent,
+    FormsStylingComponent,
   ]
 })
 export class AdvancedModule { }
