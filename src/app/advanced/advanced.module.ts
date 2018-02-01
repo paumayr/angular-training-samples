@@ -8,7 +8,6 @@ import { DefaultChangedetectionComponent } from './default-changedetection/defau
 import { OnpushComponent } from './onpush/onpush.component';
 import { OnpushModule } from './onpush/onpush.module';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DataFromObservableComponent } from './data-from-observable/data-from-observable.component';
 import { RxjsPrimerComponent } from './rxjs-primer/rxjs-primer.component';
@@ -21,6 +20,13 @@ import { AsyncAwaitComponent } from './async-await/async-await.component';
 import { FormsStylingComponent } from './forms-styling/forms-styling.component';
 import { ViewEncapsulationComponent } from './view-encapsulation/view-encapsulation.component';
 import { ViewEncapsulationModule } from './view-encapsulation/view-encapsulation.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContentProjectionModule } from './content-projection/content-projection.module';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
+import { MultiSlotContentProjectionModule } from './multi-slot-content-projection/multi-slot-content-projection.module';
+import { MultiSlotContentProjectionComponent } from './multi-slot-content-projection/multi-slot-content-projection.component';
+import { ContentChildrenComponent } from './content-children/content-children.component';
+import { ContentChildrenModule } from './content-children/content-children.module';
 
 const routes : Route[] = [
     { path: 'zones-trigger-changedetection', component: ZonesTriggerChangedetectionComponent },
@@ -35,7 +41,10 @@ const routes : Route[] = [
     { path: 'hot-vs-cold-observable', component: HotVsColdObservableComponent },
     { path: 'promises', component: PromisesComponent },
     { path: 'async-await', component: AsyncAwaitComponent },
-    { path: 'view-encapsulation', component: ViewEncapsulationComponent }
+    { path: 'view-encapsulation', component: ViewEncapsulationComponent },
+    { path: 'content-projection', component: ContentProjectionComponent },
+    { path: 'multi-slot-content-projection', component: MultiSlotContentProjectionComponent},
+    { path: 'content-children', component: ContentChildrenComponent }
 ];
 
 @NgModule({
@@ -48,6 +57,9 @@ const routes : Route[] = [
     HttpClientModule,
     RxjsServiceUnsubscribeModule,
     ViewEncapsulationModule,
+    ContentProjectionModule,
+    MultiSlotContentProjectionModule,
+    ContentChildrenModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
@@ -59,7 +71,7 @@ const routes : Route[] = [
     HotVsColdObservableComponent,
     PromisesComponent,
     AsyncAwaitComponent,
-    FormsStylingComponent,
+    FormsStylingComponent
   ]
 })
 export class AdvancedModule { }

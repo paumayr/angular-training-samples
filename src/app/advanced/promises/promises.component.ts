@@ -23,7 +23,7 @@ export class PromisesComponent implements OnInit {
   fetchOrderThenCustomer() {
     this.httpClient.get<Order>('api/orders/1').toPromise()
         .then(order => this.httpClient.get<Customer>(`api/customers/${order.customerId}`).toPromise())
-        .then(customer => console.log(customer));
+        .then(customer => console.log(customer))
   }
 
   fetchOrdersThenCustomers() {

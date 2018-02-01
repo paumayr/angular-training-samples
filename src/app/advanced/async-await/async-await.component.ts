@@ -13,6 +13,7 @@ export class AsyncAwaitComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
+    this.fetchAsync();
   }
 
   async fetchAsync() {

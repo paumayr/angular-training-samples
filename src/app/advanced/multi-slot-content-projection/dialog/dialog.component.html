@@ -1,0 +1,13 @@
+<div class="dialog">
+    <ng-content select="[header]"></ng-content>
+    <hr />
+  
+    <ng-content></ng-content>
+  
+    <hr />
+    <div>
+        <ng-content select="[buttonbar]"></ng-content>
+        <button (click)="save()">Save</button>
+        <button (click)="cancel()">Cancel</button>
+    </div>
+  </div>

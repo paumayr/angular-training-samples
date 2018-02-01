@@ -12,4 +12,6 @@ export class ViewEncapsulationComponent implements OnInit {
   ngOnInit() {
   }
 
+  slim: boolean = false;
+
 }

@@ -7,6 +7,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/concat';
 import 'rxjs/add/operator/distinct';
@@ -73,17 +74,21 @@ export class RxjsPrimerComponent implements OnInit {
   }
 
   forkJoin() {
-    var first = Observable.of(10).delay(1000);
-    var second = Observable.of(40).delay(1500);
+    var a = Observable.of(10).delay(1500);
+    var b = Observable.of('philipp').delay(1000);
 
-    Observable.forkJoin(first, second)
-      .subscribe(values => console.log(values));
+    Observable.forkJoin(a.first(), b)
+      .subscribe(([av, bv]) => {
+        console.log(av, bv);
+      });
   }
 
   forkJoinFail() {
     var first = Observable.of(10).delay(1000);
     var second = Observable.of(40).delay(1500);
-    var third = Observable.throw("oh no, this is an exception text").delay(300);
+    var third = Observable.of('asdf').delay(3300).map(x => { 
+      throw "oh no, this is an exception text"
+    });
     
     Observable.forkJoin(first, second, third)
       .subscribe(values => console.log(values),
@@ -101,10 +106,21 @@ export class RxjsPrimerComponent implements OnInit {
     });
   }
 
+  sendOrder() {
+    var cold = this.httpClient.get('api/orders/1').publish();
+    // WARNING: DOES NOT SEND! (no subscribe)
+
+    cold.subscribe(r => console.log(r));
+    cold.subscribe(r => console.log(r));
+
+    cold.connect();
+
+  }
+
   getOrderWithCustomer() {
     this.httpClient.get<Order>('api/orders/1')
         .mergeMap(order => this.httpClient.get<Customer>(`api/customers/${order.customerId}`),
-          (order, customer) => { order.customer = customer; return order; })
+                          (order, customer) => { order.customer = customer; return order; })
         .subscribe(value => console.log(value));
   }
 
@@ -113,7 +129,7 @@ export class RxjsPrimerComponent implements OnInit {
         .mergeMap(orders => Observable.from(orders))
         .mergeMap(order => this.httpClient.get<Customer>(`api/customers/${order.customerId}`),
           (order, customer) => { order.customer = customer; return order; })
-        .subscribe(value => console.log(value));
+        .subscribe(value => console.log(value));  
   }
 
   getOrdersWithCustomerCached() {

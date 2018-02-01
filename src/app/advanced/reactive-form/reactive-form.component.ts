@@ -14,7 +14,7 @@ export interface FirstLastEmail {
 })
 export class ReactiveFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.createForm();
@@ -22,7 +22,7 @@ export class ReactiveFormComponent implements OnInit {
 
   formGroup : FormGroup;
   createForm() {
-    this.formGroup = this.fb.group({
+    this.formGroup = this.formBuilder.group({
         firstname: ['', Validators.required],
         lastname: ['', Validators.required],
         email: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9]+@mycompany\.com")]]
@@ -30,7 +30,7 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   get firstname() {
-    return this.formGroup.get('lastname');
+    return this.formGroup.get('firstname');
   }
 
   get lastname() {
